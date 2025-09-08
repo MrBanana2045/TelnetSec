@@ -77,6 +77,11 @@ try {
         $clientPassword = $reader.ReadLine()
         
         if ($clientIP -eq "192.168.1.7"){
+
+            $currentPasswordd = RandomPassword
+            $currentPasswordd | Out-File "pass.txt" -NoNewline
+            Write-Host "+ new password : $currentPasswordd"
+            
             $writer.WriteLine("Welcome")
             $writer.Flush()
         } else {
